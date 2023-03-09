@@ -70,6 +70,7 @@ form {
   border: none;
   width: 100%;
   transition: background-color .3s ease;
+  border-radius: .5rem;
 }
 @media (min-width: 768px) {
    input[type="submit"]  {
@@ -86,4 +87,26 @@ form {
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+.clima {
+
+}
+.clima > p:first-of-type{
+  font-size: 6rem;
+  font-family: 'Inter', sans-serif;
+}
+.clima p {
+  text-align: center;
+  margin: 0;
+}
+.clima p span {
+  font-size: 1rem;
+  vertical-align: super;
+}
+
+.temp_min_max{
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
