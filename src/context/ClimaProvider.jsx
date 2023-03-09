@@ -10,6 +10,8 @@ const ClimaProvider = ({ children }) => {
         pais: ''
     })
 
+    const [resultado, setResultado] = useState({})
+
     const datosBusqueda = e => {
         setBusqueda({
             ...busqueda,
@@ -29,7 +31,7 @@ const ClimaProvider = ({ children }) => {
             const urlClima = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${appId}`
             
             const { data: clima } = await axios(urlClima)
-            console.log(clima);
+            setResultado(clima)
 
         } catch (error) {
             console.log(error);
@@ -41,7 +43,8 @@ const ClimaProvider = ({ children }) => {
             value={{
                 busqueda, 
                 datosBusqueda,
-                consultarClima
+                consultarClima,
+                resultado
             }}
         >
             {children}
