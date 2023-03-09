@@ -4,7 +4,7 @@ import useClima from "../hooks/useClima"
 export const Formulario = () => {
 
     const [alerta, setAlerta] = useState('')
-    const { busqueda, datosBusqueda } = useClima()
+    const { busqueda, datosBusqueda, consultarClima } = useClima()
 
     const { ciudad, pais } = busqueda
 
@@ -16,12 +16,14 @@ export const Formulario = () => {
             return
         }
 
+        consultarClima(busqueda)
+
     }
 
     return (
         <div className="contenedor">
 
-            {alerta && <p>{alerta}</p>}
+            {alerta && <p>{alerta }</p>}
             <form
                 onSubmit={handleSubmit}
             >
