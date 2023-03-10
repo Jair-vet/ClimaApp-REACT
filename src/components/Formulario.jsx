@@ -13,6 +13,9 @@ export const Formulario = () => {
 
         if(Object.values(busqueda).includes('')){
             setAlerta('Todos los Campos son Obligatorios')
+            setTimeout(() => {
+                setAlerta('')
+            }, "2000")
             return
         }
 
@@ -23,7 +26,7 @@ export const Formulario = () => {
     return (
         <div className="contenedor">
 
-            {alerta && <p>{alerta }</p>}
+            {alerta && <p className="alerta">{alerta }</p>}
             <form
                 onSubmit={handleSubmit}
             >

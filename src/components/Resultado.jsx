@@ -10,7 +10,7 @@ export const Resultado = () => {
 
     return (
         <div className="contenedor clima">
-            <h2>El Clima de {name} es: </h2>
+            <h2>El Clima de <span className="resultado-ciudad">{name}</span></h2>
 
             <p>
                 { parseInt( main.temp - kelvin) } <span>&#x2103;</span>
